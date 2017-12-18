@@ -23,9 +23,10 @@ namespace SwitchCase
                     Console.WriteLine("4. Task7_4 - Определить колиство дней в месяце");
                     Console.WriteLine("5. Task7_5 - Выбор арифметического действия и выполение этого действия над числами А и В");
                     Console.WriteLine("6. Task7_6 - Нахождение длины отрезка в метрах");
-                    Console.WriteLine("7. Task7_18 - Вывод строки-описания введенного числа");
-                    Console.WriteLine("8. GetBodyMass - Конвертер массы тела из разных величин в КГ");
-                    Console.WriteLine("9. GetCardName - Вывод названия карты");
+                    Console.WriteLine("7. Task7_7 - Конвертер массы тела из разных величин в КГ");
+                    Console.WriteLine("8. Task7_15 - Вывод названия карты");
+                    Console.WriteLine("9. Task7_18 - Вывод строки-описания введенного числа");
+                    
                     int n = int.Parse(Console.ReadLine());
                     switch (n)
                     {
@@ -36,9 +37,9 @@ namespace SwitchCase
                         case 4: Task7_4(); break;
                         case 5: Task7_5(); break;
                         case 6: Task7_6(); break;
-                        case 7: Task7_18(); break;
-                        case 8: ValidationForGetBodyMassInKG(); break;
-                        case 9: ValidationForGetCardName(); break;
+                        case 7: ValidationForGetBodyMassInKG(); break;
+                        case 8: ValidationForGetCardName(); break;
+                        case 9: Task7_18(); break;
                         default: throw new FormatException("Сделайте правильный выбор!");
                     }
                 }
