@@ -18,13 +18,14 @@ namespace SwitchCase
                 {
                     Console.WriteLine("0. Exit ");
                     Console.WriteLine("1. Task7_1 - Вывод названия дня недели");
-                    Console.WriteLine("2. Task7_2 Вывод строки-описания оценки");
-                    Console.WriteLine("3. Task7_3 Вывод названия времени года");
+                    Console.WriteLine("2. Task7_2 - Вывод строки-описания оценки");
+                    Console.WriteLine("3. Task7_3 - Вывод названия времени года");
                     Console.WriteLine("4. Task7_4 - Определить колиство дней в месяце");
                     Console.WriteLine("5. Task7_5 - Выбор арифметического действия и выполение этого действия над числами А и В");
-                    Console.WriteLine("6. Task7_18 - Вывод строки-описания введенного числа");
-                    Console.WriteLine("7. GetBodyMass - Конвертер массы тела из разных величин в КГ");
-                    Console.WriteLine("8. GetCardName - Вывод названия карты");
+                    Console.WriteLine("6. Task7_6 - Нахождение длины отрезка в метрах");
+                    Console.WriteLine("7. Task7_18 - Вывод строки-описания введенного числа");
+                    Console.WriteLine("8. GetBodyMass - Конвертер массы тела из разных величин в КГ");
+                    Console.WriteLine("9. GetCardName - Вывод названия карты");
                     int n = int.Parse(Console.ReadLine());
                     switch (n)
                     {
@@ -34,9 +35,10 @@ namespace SwitchCase
                         case 3: Task7_3(); break;
                         case 4: Task7_4(); break;
                         case 5: Task7_5(); break;
-                        case 6: Task7_18(); break;
-                        case 7: ValidationForGetBodyMassInKG(); break;
-                        case 8: ValidationForGetCardName(); break;
+                        case 6: Task7_6(); break;
+                        case 7: Task7_18(); break;
+                        case 8: ValidationForGetBodyMassInKG(); break;
+                        case 9: ValidationForGetCardName(); break;
                         default: throw new FormatException("Сделайте правильный выбор!");
                     }
                 }
@@ -230,6 +232,50 @@ namespace SwitchCase
                 catch (OverflowException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
                 catch (FormatException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
                 catch (ArgumentException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+            }
+        }
+        #endregion
+        #region Task7_6 Нахождение длины отрезка в метрах
+        static double GetLengthOfLineInMeters(double lenghtOfLine, int choise)
+        {
+            double result = 0;
+            switch (choise)
+            {
+                case 1: result += lenghtOfLine / 10; break;
+                case 2: result += lenghtOfLine * 1000; break;
+                case 3: result += lenghtOfLine; break;
+                case 4: result += lenghtOfLine / 1000; break;
+                case 5: result += lenghtOfLine / 100; break;
+            }
+            return result;
+        }
+        static void Task7_6()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Введите номер единицы длинны: \n1. Дециметр\n2. Километр\n3. Метр\n4. Миллиметр\n5. Сантиметр");
+                    int choise = int.Parse(Console.ReadLine());
+                    if (choise <= 0 || choise >= 6) throw new ArgumentException("Введите число в диапазоне от 1 до 5!");
+                    while (true)
+                    {
+                        try
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Введите длинну отрезка: ");
+                            double lenghtOfLine = double.Parse(Console.ReadLine());
+                            Console.WriteLine(GetLengthOfLineInMeters(lenghtOfLine, choise));
+                            break;
+                        }
+                        catch (ArgumentException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+                        catch (FormatException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+                    }
+                    break;
+                }
+                catch (ArgumentException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+                catch (FormatException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
             }
         }
         #endregion

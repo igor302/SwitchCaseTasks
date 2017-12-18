@@ -5,3 +5,10 @@ C:\Users\IGOR\source\repos\SwitchCase\SwitchCase\obj\Debug\SwitchCase.csproj.Cor
 C:\Users\IGOR\source\repos\SwitchCase\SwitchCase\obj\Debug\SwitchCase.exe
 C:\Users\IGOR\source\repos\SwitchCase\SwitchCase\obj\Debug\SwitchCase.pdb
 C:\Users\IGOR\source\repos\SwitchCase\SwitchCase\obj\Debug\SwitchCase.csprojResolveAssemblyReference.cache
+f:\Навчання\Курс InfoPulse\Homeworks\SwitchCase\SwitchCase\bin\Debug\SwitchCase.exe.config
+f:\Навчання\Курс InfoPulse\Homeworks\SwitchCase\SwitchCase\bin\Debug\SwitchCase.exe
+f:\Навчання\Курс InfoPulse\Homeworks\SwitchCase\SwitchCase\bin\Debug\SwitchCase.pdb
+f:\Навчання\Курс InfoPulse\Homeworks\SwitchCase\SwitchCase\obj\Debug\SwitchCase.csprojResolveAssemblyReference.cache
+f:\Навчання\Курс InfoPulse\Homeworks\SwitchCase\SwitchCase\obj\Debug\SwitchCase.csproj.CoreCompileInputs.cache
+f:\Навчання\Курс InfoPulse\Homeworks\SwitchCase\SwitchCase\obj\Debug\SwitchCase.exe
+f:\Навчання\Курс InfoPulse\Homeworks\SwitchCase\SwitchCase\obj\Debug\SwitchCase.pdb
