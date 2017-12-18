@@ -24,9 +24,10 @@ namespace SwitchCase
                     Console.WriteLine("5. Task7_5 - Выбор арифметического действия и выполение этого действия над числами А и В");
                     Console.WriteLine("6. Task7_6 - Нахождение длины отрезка в метрах");
                     Console.WriteLine("7. Task7_7 - Конвертер массы тела из разных величин в КГ");
-                    Console.WriteLine("8. Task7_15 - Вывод названия карты");
-                    Console.WriteLine("9. Task7_18 - Вывод строки-описания введенного числа");
-                    
+                    Console.WriteLine("8. Task7_12 - Выражение трех величин через четвертую");
+                    Console.WriteLine("9. Task7_15 - Вывод названия карты");
+                    Console.WriteLine("10. Task7_18 - Вывод строки-описания введенного числа");
+
                     int n = int.Parse(Console.ReadLine());
                     switch (n)
                     {
@@ -38,8 +39,9 @@ namespace SwitchCase
                         case 5: Task7_5(); break;
                         case 6: Task7_6(); break;
                         case 7: ValidationForGetBodyMassInKG(); break;
-                        case 8: ValidationForGetCardName(); break;
-                        case 9: Task7_18(); break;
+                        case 8: Task7_12(); break;
+                        case 9: ValidationForGetCardName(); break;
+                        case 10: Task7_18(); break;
                         default: throw new FormatException("Сделайте правильный выбор!");
                     }
                 }
@@ -321,6 +323,86 @@ namespace SwitchCase
                 }
                 catch (ArgumentException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
                 catch (FormatException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+            }
+        }
+        #endregion
+        #region Task7_12 Выражение трех величин через четвертую
+        static string GetThreeValuesFromForth(int choise, double X)
+        {
+            string result = "";
+            double D, L, S, R;
+            const float pi = 3.14f;
+            switch (choise)
+            {
+                case 1:
+                    {
+                        D = 2 * X;
+                        L = pi * D;
+                        S = pi * Math.Pow(X, 2);
+                        result = "R = " + X + "\nD = " + D + "\nL = " + L + "\nS = " + S;
+                    }
+                    break;
+                case 2:
+                    {
+                        R = X / 2;
+                        L = pi * X;
+                        S = pi * Math.Pow(R, 2);
+                        result = "D = " + X + "\nR = " + R + "\nL = " + L + "\nS = " + S;
+                    }
+                    break;
+                case 3:
+                    {
+                        D = X / pi;
+                        R = D / 2;
+                        S = pi * R * R;
+                        result = "L = " + X + "\nR = " + R + "\nD = " + D + "\nS = " + S;
+                    }
+                    break;
+                case 4:
+                    {
+                        R = Math.Sqrt((X / pi));
+                        D = 2 * R;
+                        L = pi * D;
+                        result = "S = " + X + "\nR = " + R + "\nD = " + D + "\nL = " + L;
+                    }
+                    break;
+            }
+            Console.WriteLine(result);
+            return result;
+        }
+        static void Task7_12()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Пусть в окружности: \n1) R - радиус\n2) D - диаметр\n3) L - длина\n4) S - площадь круга");
+                    Console.WriteLine("Введите номер величины (от 1 до 4): ");
+                    int choise = int.Parse(Console.ReadLine());
+                    while (true)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        if (choise == 1) Console.WriteLine("Введите R");
+                        else if (choise == 2) Console.WriteLine("Введите D");
+                        else if (choise == 3) Console.WriteLine("Введите L");
+                        else if (choise == 4) Console.WriteLine("Введите S");
+                        else throw new ArgumentException("Введите число в диапазоне от 1 до 4");
+                        try
+                        {
+                            double X = double.Parse(Console.ReadLine());
+                            GetThreeValuesFromForth(choise, X);
+                            break;
+                        }
+                        catch (FormatException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+                        catch (ArgumentException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+                        catch (OverflowException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+                    }
+                    break;
+                }
+                catch (FormatException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+                catch (ArgumentException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
+                catch (OverflowException ex) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(ex.Message); }
             }
         }
         #endregion
